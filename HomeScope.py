@@ -28,7 +28,7 @@ def is_valid_dill_file(filepath):
         return False
 
 def get_model():
-    url = 'https://drive.google.com/uc?export=download&id=1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR'
+    url = 'https://drive.google.com/file/d/1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR/view?usp=sharing'
     output = 'HomeScope.pkl'
     if not os.path.exists(output):
         if not download_file(url, output):
