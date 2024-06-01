@@ -28,16 +28,13 @@ def is_valid_dill_file(filepath):
         return False
 
 def get_model():
-    import gdown
-    url = 'https://drive.google.com/file/d/1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR/view?usp=sharing'
+    url = 'https://drive.google.com/uc?id=1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR'
     output = 'HomeScope.pkl'
-    if not os.path.exists('downloaded_rfr_v1.pkl'):
-        gdown.download(url, output, quiet=False, fuzzy=True)
-    with open('downloaded_rfr_v1.pkl', 'rb') as f:
+    if not os.path.exists(output) or not is_valid_dill_file(output):
+        download_file(url, output)
+    with open(output, 'rb') as f:
         reloaded_model = dill.load(f)
-
     return reloaded_model
-
 
 reloaded_model = get_model()
 
