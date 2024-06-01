@@ -1,4 +1,3 @@
-IPython
 dill
 gdown
 jsonlib-python3
