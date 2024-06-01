@@ -4,10 +4,9 @@ import numpy as np
 import json
 import dill
 import os
-
+import gdown
 
 def get_model():
-    import gdown
     url = 'https://drive.google.com/file/d/1zFi-yYXkB02bLvIlA3ZZ7CLE6AcyDJ2e/view?usp=sharing'
     output = 'HomeScope.pkl'
     if not os.path.exists('HomeScope.pkl'):
