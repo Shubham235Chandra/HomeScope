@@ -19,12 +19,23 @@ def download_file(url, output):
         st.error(f"Error downloading the file: {e}")
         return False
 
+def is_valid_dill_file(filepath):
+    try:
+        with open(filepath, 'rb') as f:
+            dill.load(f)
+        return True
+    except:
+        return False
+
 def get_model():
     url = 'https://drive.google.com/uc?export=download&id=1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR'
     output = 'HomeScope.pkl'
     if not os.path.exists(output):
         if not download_file(url, output):
             st.stop()  # Stop the script if the download fails
+    if not is_valid_dill_file(output):
+        st.error("Downloaded file is not a valid model.")
+        st.stop()
     try:
         with open(output, 'rb') as f:
             reloaded_model = dill.load(f)
