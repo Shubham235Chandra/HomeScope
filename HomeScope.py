@@ -20,7 +20,7 @@ def get_model():
 
 reloaded_model = get_model()
 
-st.title('Median House Value Prediction')
+st.title('HomeScope: California Median Price Forecast')
 
 with open('rfr_info.json') as f:
     model_info = json.load(f)
