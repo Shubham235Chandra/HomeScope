@@ -34,7 +34,7 @@ def is_valid_dill_file(filepath):
         return False
 
 def get_model():
-    url = 'https://drive.google.com/uc?id=1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR'
+    url = 'https://drive.google.com/file/d/1L9kEPp4a8GiG7J5d67KN9W3QaziSqNhP/view?usp=sharing'
     output = 'HomeScope.pkl'
     if not os.path.exists(output) or not is_valid_dill_file(output):
         if download_file(url, output):
@@ -75,7 +75,7 @@ def check_content_type(url):
         return None
 
 # Execute the content type check
-content_type = check_content_type('https://drive.google.com/uc?id=1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR')
+content_type = check_content_type('https://drive.google.com/file/d/1L9kEPp4a8GiG7J5d67KN9W3QaziSqNhP/view?usp=sharing')
 
 reloaded_model = get_model()
 
