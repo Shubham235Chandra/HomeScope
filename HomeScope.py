@@ -53,6 +53,30 @@ def get_model():
         logging.error(f"Error loading the model: {e}")
         return None
 
+# Check the size of the downloaded file
+def check_file_size(filepath):
+    try:
+        size = os.path.getsize(filepath)
+        logging.info(f"File size: {size} bytes")
+        return size
+    except Exception as e:
+        logging.error(f"Error getting file size: {e}")
+        return 0
+
+# Check the content type of the downloaded file
+def check_content_type(url):
+    try:
+        response = requests.head(url)
+        content_type = response.headers.get('content-type')
+        logging.info(f"Content type: {content_type}")
+        return content_type
+    except Exception as e:
+        logging.error(f"Error getting content type: {e}")
+        return None
+
+# Execute the content type check
+content_type = check_content_type('https://drive.google.com/uc?id=1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR')
+
 reloaded_model = get_model()
 
 if reloaded_model:
