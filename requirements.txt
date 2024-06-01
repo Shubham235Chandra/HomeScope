@@ -1,12 +1,6 @@
+streamlit
+pandas
+numpy
+jsonlib-python3
 dill
 gdown
-jsonlib-python3
-matplotlib
-numpy
-os
-pandas
-requests
-seaborn
-scikit-learn
-streamlit
-jupyter
