@@ -1,7 +1,7 @@
 streamlit
 pandas
 numpy
-json
+jsonlib-python3
 dill
 gdown
 scikit-learn
