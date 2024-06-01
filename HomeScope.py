@@ -28,21 +28,18 @@ def is_valid_dill_file(filepath):
         return False
 
 def get_model():
+    import gdown
     url = 'https://drive.google.com/file/d/1Yfd5ZHSbxjCcq7er3z-pnmj6WvxISbKR/view?usp=sharing'
     output = 'HomeScope.pkl'
-    if not os.path.exists(output):
-        if not download_file(url, output):
-            st.stop()  # Stop the script if the download fails
-    if not is_valid_dill_file(output):
-        st.error("Downloaded file is not a valid model.")
-        st.stop()
-    try:
-        with open(output, 'rb') as f:
-            reloaded_model = dill.load(f)
-        return reloaded_model
-    except Exception as e:
-        st.error(f"Failed to load the model: {e}")
-        st.stop()
+    if not os.path.exists('downloaded_rfr_v1.pkl'):
+        gdown.download(url, output, quiet=False, fuzzy=True)
+    with open('downloaded_rfr_v1.pkl', 'rb') as f:
+        reloaded_model = dill.load(f)
+
+    return reloaded_model
+
+
+reloaded_model = get_model()
 
 st.title('HomeScope: California Median Price Forecast')
 
