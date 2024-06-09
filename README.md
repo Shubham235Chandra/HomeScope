@@ -80,8 +80,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 - Dataset: California Housing Prices dataset.
 - Streamlit for providing a platform to deploy data science apps.
 - Scikit-learn for machine learning algorithms.
-
-## Links
-
-- [Deployed App](URL_to_deployed_app)
-- [GitHub Repository](https://github.com/yourusername/HomeScope)
