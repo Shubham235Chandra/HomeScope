@@ -80,3 +80,10 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 - Dataset: California Housing Prices dataset.
 - Streamlit for providing a platform to deploy data science apps.
 - Scikit-learn for machine learning algorithms.
+
+## Contact Me
+
+If you have any questions or would like to discuss further, feel free to reach out:
+
+- **Email**: [shubhamchandrawork@gmail.com](mailto:shubhamchandrawork@gmail.com)
+- **LinkedIn**: [Shubham Chandra](https://www.linkedin.com/in/schandra235)
